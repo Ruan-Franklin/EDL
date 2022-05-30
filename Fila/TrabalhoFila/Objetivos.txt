@@ -1,0 +1,21 @@
+Missão: Resolver as seguintes questões da lista Fila e Deque(Disponível no google sala de aula):
+Questão 03 (original)
+
+Questão 05 (original)
+
+Questão 07 (alterada) - IMPLEMENTE EM JAVA/C# o TAD Fila, utilizando duas pilhas
+Questão 08 (alterada) - IMPLEMENTE EM JAVA/C# o TAD Pilha, utilizando duas filas
+Nova Questão -  IMPLEMENTE EM JAVA/C# o TAD Pilha utilizando uma Lista Simplesmente Encadeada. 
+
+                 Questões
+
+3. Implemente os TADs Fila e Pilha utilizando a estrutura de dados concreta lista simplesmente encadeada.
+
+
+5. Implemente uma classe Fila usando a classe Vector para armazenar os elementos internamente.
+
+7. - IMPLEMENTE EM JAVA/C# o TAD Fila, utilizando duas pilhas
+
+8. Questão 08 (alterada) - IMPLEMENTE EM JAVA/C# o TAD Pilha, utilizando duas filas
+
+
