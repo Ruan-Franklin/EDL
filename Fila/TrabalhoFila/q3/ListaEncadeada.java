@@ -62,19 +62,18 @@ public class ListaEncadeada<T> {
         return calda.GetElemento();
     }
     //A próxima função permite adicionar um elemento na lista
-    public void addFirst(T e){
+    public void adcPrimeiro(T e){
         //Como boa parte do código é composto por genéricos, é possível adicionar qualquer tipo de elementos, como int, string, etc...
         cabeça = new No<>(e, cabeça);
         //Se o tamanho for igual a zero, o último elemento é igual ao primeiro.
          if(tamanho==0){
-             cabeça=calda;
-
+             calda=cabeça;
          }
          tamanho++;
          System.out.println("Nó principal adicionado com '"+cabeça.GetElemento() +"'Elemento.");
     }
     //Função para adicionar no final
-    public void addLast(T e){
+    public void adcUltimo(T e){
         //Criando um novo nó
         No<T> newNo = new No<>(e,null);
         if(IsEmpty()){
@@ -88,19 +87,19 @@ public class ListaEncadeada<T> {
             tamanho++;
             System.out.println("Nó final adicionado com '"+calda.GetElemento() +"'Elemento.");
         }
-        public T removeFirst(){
+        public T removePrimeiro(){
             //Se estiver vazia, não será possível remover e retornará nulo
             if(IsEmpty()){
                 return null;
             }
-            T answer = cabeça.GetElemento();
+            T responda = cabeça.GetElemento();
             //Agora, é necessário decrementar o tamanho
             tamanho--;
             if(tamanho==0){
                 calda = null;
             }
-            System.out.println("Nó da cabeça removido '"+ answer + "' elemento.'");
-            return answer;
+            System.out.println("Nó da cabeça removido '"+ responda + "' elemento.'");
+            return responda;
 //Parei o vídeo em 15 min
     }
     public void reverseList(){
@@ -130,6 +129,32 @@ public class ListaEncadeada<T> {
         }
 
 
+        }
+        public T  RemoveElemento(T e){
+            No<T> atual = cabeça;
+            No<T> anterior = cabeça;
+            int posição = 0;
+            while(atual != null && atual.GetElemento() != e){
+                anterior=atual;
+                atual = atual.getProximo();
+                posição++;
+            }
+            if(atual==null){
+                return null;
+            }else{
+                if(cabeça == atual){
+                    cabeça=atual.getProximo();
+                }
+                else if(calda == atual){
+                    calda=anterior;
+                    calda.SetProximo(null);
+                }else{
+                    anterior.SetProximo(atual.getProximo());
+                }
+                System.out.println("Localizar e remover nó na posição"+posição);
+                tamanho--;
+                return atual.GetElemento();
+            }
         }
     }
 

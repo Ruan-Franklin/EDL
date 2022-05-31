@@ -13,13 +13,13 @@ public class Fila<E>{
     public boolean IsEmpty(){
         return list.IsEmpty();
     }
-    public void Inserir(E elemento){
+    public void Enfileirar(E elemento){
         //Método para inserir um elemento no final da lista encadeada
-        list.addLast(elemento);
+        list.adcUltimo(elemento);
     }
-    public E remover(){
+    public E Desinfileirar(){
         //Remove o primeiro elemento da lista encadeada
-        return list.removeFirst();
+        return list.removePrimeiro();
         //"Primeiro a entrar, primeiro a sair"
     }
     public E first(){

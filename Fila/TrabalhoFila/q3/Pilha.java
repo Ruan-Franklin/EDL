@@ -16,11 +16,11 @@ public class Pilha <E> {
     }
     //Função para inserir na pilha
     public void push(E elemento){
-        list.addFirst(elemento);
+        list.adcPrimeiro(elemento);
     }
     //Função para remover um elemento da pilha
     public E pop(){
-        return list.removeFirst();
+        return list.removePrimeiro();
 
     }
     public E top(){
