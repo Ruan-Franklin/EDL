@@ -81,4 +81,10 @@ public interface ILista {
      */
     public Object remove(Object elemento);
 
+    /**
+     * Mostra os elementos da lista.
+     * @return Uma String com os elementos da lista
+     */
+    public String mostrar();
+
 }
