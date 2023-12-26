@@ -4,11 +4,11 @@ public class TabelaHash<Chave, Valor> implements IHash<Chave, Valor> {
     // Atributos
     private static final double fator_carga = 0.7;
     private int tamanho;
-    private Vetor<Entrada<Chave, Valor>>[] tabela; // Substituindo Vector por Vetor
+    private Vetor<Entrada<Chave, Valor>>[] tabela;
 
     // Construtor
     public TabelaHash() {
-        this.tabela = new Vetor[10]; // Substituindo Vector por Vetor
+        this.tabela = new Vetor[10]; 
         this.tamanho = 0;
     }
 
@@ -17,11 +17,11 @@ public class TabelaHash<Chave, Valor> implements IHash<Chave, Valor> {
     }
 
     private void rehash() {
-        Vetor<Entrada<Chave, Valor>>[] tabelaAntiga = tabela; // Substituindo Vector por Vetor
+        Vetor<Entrada<Chave, Valor>>[] tabelaAntiga = tabela; 
         int novoTamanho = tabela.length * 2;
-        tabela = new Vetor[novoTamanho]; // Substituindo Vector por Vetor
+        tabela = new Vetor[novoTamanho];
         tamanho = 0;
-        for (Vetor<Entrada<Chave, Valor>> lista : tabelaAntiga) { // Substituindo Vector por Vetor
+        for (Vetor<Entrada<Chave, Valor>> lista : tabelaAntiga) { 
             if (lista != null) {
                 for (Entrada<Chave, Valor> entrada : lista) {
                     inserir(entrada.getChave(), entrada.getValor());
@@ -37,7 +37,7 @@ public class TabelaHash<Chave, Valor> implements IHash<Chave, Valor> {
         }
         int indice = hash(chave);
         if (tabela[indice] == null) {
-            tabela[indice] = new Vetor<>(1); // Substituindo Vector por Vetor
+            tabela[indice] = new Vetor<>(1); 
         }
         for (Entrada<Chave, Valor> entrada : tabela[indice]) {
             if (entrada.getChave().equals(chave)) {
@@ -45,7 +45,7 @@ public class TabelaHash<Chave, Valor> implements IHash<Chave, Valor> {
                 return;
             }
         }
-        tabela[indice].inserirElementoNaPosicao(tabela[indice].tamanho(), new Entrada<>(chave, valor)); // Substituindo add por inserirElementoNaPosicao
+        tabela[indice].inserirElementoNaPosicao(tabela[indice].tamanho(), new Entrada<>(chave, valor)); 
         tamanho++;
     }
 
